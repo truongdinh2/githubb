@@ -18,8 +18,8 @@ body{
   width: 70%;
   margin: auto;
   /* text-align: center; */
-  border-left: 1px solid #999999;
-  border-right: 1px solid #999999;
+  border-left: 1px solid #e2dddd;
+  border-right: 1px solid #e0dcdc;
   height: auto;
 }
 .title{
@@ -29,7 +29,7 @@ body{
 }
 .page{
   font-family: 'Leckerli One', cursive;
-  height: 96.3vh;
+  min-height: 96.3vh;
   font-weight: 200 !important;
 
 }
