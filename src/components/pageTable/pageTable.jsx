@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './pageTable.css';
 
 const PageTable = (props) => {
-    const [pagePerNum, setPagePerNum] = useState (3);
+    const [pagePerNum, setPagePerNum] = useState (5);
     const [dataNum, setDataNum] = useState([]);
     const dataNum1 = props.dataNum;
     useEffect(() => {
@@ -38,10 +38,10 @@ const PageTable = (props) => {
                     <select onChange={
                         (e) => { setPagePerNum(e.target.value); setPageCurr('1') }
                     }>
-                        <option value={3} >3</option>
                         <option value={5} >5</option>
                         <option value={10} >10</option>
                         <option value={15} >15</option>
+                        <option value={25} >25</option>
                     </select>
                 </span>
                 <span

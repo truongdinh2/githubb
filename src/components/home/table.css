@@ -8,3 +8,6 @@ td,th{
     padding: 1%;
     text-align: center;
 }
+th{
+    text-align: center !important;
+}
