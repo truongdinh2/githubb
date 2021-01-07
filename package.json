@@ -3,24 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts4": "^4.10.13",
+    "@amcharts/amcharts4-geodata": "^4.1.19",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.9.4",
     "chart.js": "^2.9.4",
+    "framer": "^1.2.12",
+    "framer-motion": "^3.1.4",
     "google-map-react": "^2.1.9",
+    "i18next": "^19.8.4",
+    "leaflet": "^1.7.1",
+    "numeral": "^2.0.6",
     "react": "^17.0.1",
     "react-chartjs-2": "^2.11.1",
     "react-dom": "^17.0.1",
     "react-google-maps": "^9.4.5",
+    "react-leaflet": "^3.0.5",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "babel src -d lib",
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": [

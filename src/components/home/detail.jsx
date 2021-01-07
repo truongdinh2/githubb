@@ -26,7 +26,7 @@ export default function Detail(props) {
         }
     }
     // console.log(data);
-    console.log(process.env.REACT_APP_GOOGLE_KEY);
+    // console.log(process.env.REACT_APP_GOOGLE_KEY);
     // console.log(listPatent, 'listPatent');
     const LoaddingFun = () => {
         return (
@@ -38,7 +38,7 @@ export default function Detail(props) {
             {
                 loading ?
                     <>
-                        <table>
+                        <table className="detailTable">
                             <thead>
                                 <tr>
                                     <th>hi</th>

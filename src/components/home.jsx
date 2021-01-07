@@ -1,22 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { sortData } from '../api/util';
 import Header from './header';
 import Detail from './home/detail';
 import Map from './home/map';
+import Summary from './home/sumary';
+import TableInfo from './home/TableIfn';
 
 export default function Home() {
+    const [countries, setCountries] = useState([]);
+    const [mapCountries, setMapCountries] = useState([]);
+    const [tableData, setTableData] = useState([]);
+    const [casesType, setCasesType] = useState("cases");
+
+    useEffect(() => {
+        const getCountriesData = async () => {
+            fetch("https://disease.sh/v3/covid-19/countries")
+                .then((response) => response.json())
+                .then((data) => {
+                    const countries = data.map((country) => ({
+                        name: country.country,
+                        value: country.countryInfo.iso2,
+                    }));
+                    let sortedData = sortData(data);
+                    setCountries(countries);
+                    setMapCountries(data);
+                    setTableData(sortedData);
+                });
+        };
+
+        getCountriesData();
+    }, []);
     return (
         <>
             <div className="page">
                 <Header />
-                <div className="container">
-                    <div className="map"  >
-                        <Map/>
+                <div className="main">
+                    <div className="container">
+                        <div className="map"  >
+                            <Map
+                                mapCountries={mapCountries}
+                                casesType={casesType}
+                            />
+                        </div>
+                        <div className="sumary" >
+                            <Summary />
+                        </div>
+                        <div className="detail" >
+                            <Detail />
+                        </div>
                     </div>
-                    <div className="sumary" >summary</div>
-                    <div className="detail" >
-                        <Detail/>
+                    <div className="table1">
+                        <TableInfo
+                            tableData={tableData}
+                        />
                     </div>
-                    <div className="end" >end</div>
                 </div>
             </div>
             <div className="footer">

@@ -1,13 +1,13 @@
-table{
+.detailTable{
     width: 100%;
 }
-tr{
+.detailTable tr{
     border-bottom: 1px solid black;
 }
-td,th{
+.detailTable td,th{
     padding: 1%;
     text-align: center;
 }
-th{
+.detailTable th{
     text-align: center !important;
 }
