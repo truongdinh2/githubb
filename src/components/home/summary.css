@@ -4,6 +4,7 @@
     align-items: center;
 }
 .flitem_2sum {
+    
     position: relative;
     margin: 10px 10px;
     height: 100px;
@@ -21,11 +22,8 @@
     width: 100%;
 }
 .flitem_2sum div {
-    /* height: 100px;
-    width: 200px; */
     font-weight: 600;
-    /* color: rgb(150, 0, 0); */
-    font-size: 1.5rem;
+    font-size: 22px;
     font-family: "Times New Roman", Times, serif;
     position: absolute;
     width: 100%;
@@ -41,11 +39,8 @@
     animation-duration: 1s;
     animation-iteration-count: infinite;
 
-    /* animation-iteration-count: infinite; */
 }
-/* .flbox_2sum:hover .flitem_2sum div img{
-    transform: translateY(-3px);
-} */
+
 @keyframes img {
     from {
         transform: translateY(0px);
@@ -54,6 +49,4 @@
         transform: translateY(-7px);
     }
 }
-/* .flbox_2sum * {
-    border: 1px solid black;
-} */
+

@@ -1,0 +1,20 @@
+{
+    "title": "Covid 19 information ",
+    "population" : " Population",
+    "sum": "Total Cases",
+    "deaths":"Deaths",
+    "recovered":"Recovered",
+    "critical":"Critical",
+    "tests":"Tests",
+    "todayCases":"Today Cases",
+    "todayDeaths":"Today Deaths",
+    "todayRecovered":"Today Recovered",
+    "active":"Active",
+    "patient":"Patient",
+    "age":"Age",
+    "status":"Status",
+    "Position":"Position",
+    "statusDe":"treatmenting",
+    "cured":"cured"
+
+}

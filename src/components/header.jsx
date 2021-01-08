@@ -1,13 +1,20 @@
 import { Select } from 'antd';
 import React, { useState } from 'react';
-
+import { useDispatch,useSelector } from 'react-redux';
+import {LanguageVi,LanguageEn} from './../action/actiontypes' 
 const { Option } = Select;
 export default function Header() {
-    const [language, setLanguege] = useState('vi')
+    const dispatch = useDispatch();
+    const [language, setLanguage] = useState('vi');
     function handleChange(value) {
-        setLanguege(value)
+        setLanguage(value);
+        if(value==='vi'){
+            dispatch(LanguageVi(value))
+        }else{
+            dispatch(LanguageEn(value))
+        }
     }
-    console.log(language)
+const LanguageType = useSelector(state => state.LanguageType);
     return (
         <>
             <div className="logo">
@@ -15,15 +22,15 @@ export default function Header() {
                 <div>
                     <Select defaultValue="Tiếng việt"
                         style={{ width: 120 }}
+                        value={language}
                         onChange={handleChange}>
                         <Option value="vi">Tiếng việt</Option>
                         <Option value="en">English</Option>
-                        <Option value="nihongo">Nihongo</Option>
                     </Select>
                 </div>
             </div>
             <div className="title">
-                <h2>title</h2>
+                <h2>{LanguageType.data.title.toUpperCase()}</h2>
             </div>
         </>
     );

@@ -1,0 +1,19 @@
+{
+    "population" : " Dân số",
+    "title": "Thông tin Covid 19",
+    "sum": "Ca nhiễm",
+    "deaths":"Tử vong",
+    "recovered":"Hồi phục",
+    "critical":"Nguy kịch",
+    "tests":"Đang xét nghiệm",
+    "todayCases":"Ca nhiễm hôm nay",
+    "todayDeaths":"Ca tử vong hôm nay",
+    "todayRecovered":"Ca hồi phục hôm nay",
+    "active":"Đang điều trị",
+    "patient":"Bệnh nhân",
+    "age":"Tuổi",
+    "status":"Trạng thái",
+    "Position":"Quê quán",
+    "statusDe":"Đang điều trị",
+    "cured": "Khỏi"
+}

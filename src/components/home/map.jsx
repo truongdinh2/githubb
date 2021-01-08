@@ -1,9 +1,9 @@
+import { Icon } from "leaflet";
 import 'leaflet/dist/leaflet.css';
-import { isNumeral } from 'numeral';
-import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet';
-import { showDataOnMap, sortData } from '../../api/util';
-import { Icon } from "leaflet"
+import { showDataOnMap } from '../../api/util';
 export default function GooM({mapCountries,casesType}) {
     const iconPosi = new Icon({
         iconUrl: "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png",
@@ -31,6 +31,8 @@ export default function GooM({mapCountries,casesType}) {
             </Marker>
         )
     }
+    const daName = useSelector(state => state.LanguageType)
+    // console.log(screen.width)
     return (
         <MapContainer
             maxZoom={12}
@@ -44,7 +46,7 @@ export default function GooM({mapCountries,casesType}) {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <LocationMarker />
-            {showDataOnMap(mapCountries, casesType)}
+            {showDataOnMap(mapCountries, casesType,daName)}
         </MapContainer>
 
     )

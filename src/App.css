@@ -6,9 +6,13 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-.main{
+.sumary {
+  margin: 10% 0;
+}
+.main {
   display: flex;
   flex-flow: row wrap;
+  justify-content: flex-end;
 }
 .footer {
   display: flex;
@@ -19,19 +23,18 @@ body {
   background-color: #999999;
 }
 .container {
-  width: 600px;
-  flex-basis: 85%;
-  /* width: 80%; */
-  /* margin: auto; */
-  /* text-align: center; */
+  width: 65%;
+
   border-left: 1px solid #e2dddd;
   border-right: 1px solid #e0dcdc;
   height: auto;
 }
 .title {
   display: flex;
+  font-size: 1.5rem;
   justify-content: center;
   margin: 1% 0;
+  font-family: "Times New Roman", Times, serif;
 }
 .page {
   font-family: "Leckerli One", cursive;
@@ -55,10 +58,74 @@ body {
   padding: 1% 3%;
 }
 .logo > div {
-  font-size: 1.2rem;
+  font-size: 18px;
 }
-.table1{
-  flex-basis: 15%;
+.table1 {
+  /* flex-basis: 15%; */
 }
+.mapcontain {
+  height: 50vh;
+  width: 100%;
+}
+@media screen and (max-width: 1197px) {
+  .main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+  .container {
+    width: 100%;
+  }
+  /* summary*/
+  .flitem_2sum span {
+    font-size: 13px;
+    text-align: center;
+    line-height: 13px;
+  }
+  .flitem_2sum div {
+    font-size: 18px !important;
+  }
+}
+/* @media screen and (max-width: 638px) {
+  .flbox_2sum {
+    display: flex;
+    justify-content: space-between;
+}
+.flitem_2sum {
+    
+    position: relative;
+    margin: 10px 10px;
+    height: 100px;
+    width: 200px;
+    border: 2px solid transparent;
+    border-radius: 30%;
+    box-shadow: 1px 1px 4px rgb(99, 59, 59), 1px 1px 4px darkblue;
+}
+.flitem_2sum span {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+.flitem_2sum div {
+    font-weight: 600;
+    font-size: 22px;
+    font-family: "Times New Roman", Times, serif;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flitem_2sum div img {
+    height: 30px;
+    width: auto;
+    animation-name: img;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 
-
+}
+} */

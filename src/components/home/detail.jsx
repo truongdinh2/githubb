@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import PageTable from '../pageTable/pageTable';
-import './table.css'
-
+import './table.css';
 export default function Detail(props) {
     const [data, setData] = useState('');
     const [rowCovy, setRowCovy] = useState([]);
@@ -25,9 +25,7 @@ export default function Detail(props) {
             setRowCovy(params)
         }
     }
-    // console.log(data);
-    // console.log(process.env.REACT_APP_GOOGLE_KEY);
-    // console.log(listPatent, 'listPatent');
+    const daName = useSelector(state => state.LanguageType)
     const LoaddingFun = () => {
         return (
             <div></div>
@@ -41,11 +39,11 @@ export default function Detail(props) {
                         <table className="detailTable">
                             <thead>
                                 <tr>
-                                    <th>hi</th>
-                                    <th>hi</th>
-                                    <th>hi</th>
-                                    <th>hi</th>
-                                    <th>hi</th>
+                                    <th>STT</th>
+                                    <th>{daName.data.patient}</th>
+                                    <th>{daName.data.age}</th>
+                                    <th>{daName.data.status}</th>
+                                    <th>{daName.data.Position}</th>
                                     {/* <th>hi</th> */}
                                 </tr>
                             </thead>
@@ -63,7 +61,7 @@ export default function Detail(props) {
                                                 {inf.age}
                                             </td>
                                             <td>
-                                                {inf.status}
+                                                {(inf.status === 'Đang điều trị'? daName.data.statusDe: daName.data.cured)}
                                             </td>
                                             <td>
                                                 {`${inf.detectionPosition} - ${inf.nationality}`}
