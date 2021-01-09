@@ -86,46 +86,36 @@ body {
     font-size: 18px !important;
   }
 }
-/* @media screen and (max-width: 638px) {
+@media screen and (max-width: 638px) {
   .flbox_2sum {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .flitem_2sum {
-    
-    position: relative;
-    margin: 10px 10px;
     height: 100px;
-    width: 200px;
-    border: 2px solid transparent;
-    border-radius: 30%;
-    box-shadow: 1px 1px 4px rgb(99, 59, 59), 1px 1px 4px darkblue;
-}
-.flitem_2sum span {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    position: absolute;
-    bottom: 5px;
-    width: 100%;
+    width: 100px !important;
 }
 .flitem_2sum div {
-    font-weight: 600;
-    font-size: 22px;
-    font-family: "Times New Roman", Times, serif;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-weight: 600;
+  font-size: 16px !important;
 }
-.flitem_2sum div img {
-    height: 30px;
-    width: auto;
-    animation-name: img;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+.title {
+  padding: 10px 60px;
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: center;
+}
+.table {
+  width: 100%;
+  margin-top: -20px;
+  margin-bottom: 40px ;
+  height: 420px !important;
+}
 
+.table tr {
+  display: flex;
+  justify-content: space-between;
+  width: 95vw !important;
 }
-} */
+}
