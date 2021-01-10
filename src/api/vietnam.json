@@ -15,5 +15,6 @@
     "status":"Trạng thái",
     "Position":"Quê quán",
     "statusDe":"Đang điều trị",
-    "cured": "Khỏi"
+    "cured": "Khỏi",
+    "bugdata":"sorry! dữ liệu hệ thống đang lỗi"
 }

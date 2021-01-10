@@ -86,6 +86,14 @@ body {
     font-size: 18px !important;
   }
 }
+.change_data_chart{
+  display: flex;
+  justify-content: space-between;
+}
+.change_data_chart span {
+  cursor: pointer;
+  margin: 2% 1%;
+}
 @media screen and (max-width: 638px) {
   .flbox_2sum {
     display: flex;
