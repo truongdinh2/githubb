@@ -6,6 +6,7 @@ import Map from './home/map';
 import Summary from './home/sumary';
 import TableInfo from './home/TableIfn';
 import Chart from './home/chart';
+import Content from './home/content';
 
 export default function Home() {
     const [countries, setCountries] = useState([]);
@@ -51,16 +52,20 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="table1">
-                        <div>
+                        <div className="chartH">
                             <Chart />
                         </div>
-                        <div>
+                        <div className="tbIf">
                             <TableInfo
                                 tableData={tableData}
                             />
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="ct">
+            <div className="ct0"><Content/></div>
+            <div className="ct1"></div>
             </div>
             <div className="footer">
                 copyright @ dinh truong

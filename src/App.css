@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: 400;
 }
 .sumary {
   margin: 10% 0;
@@ -37,7 +38,7 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 .page {
-  font-family: "Leckerli One", cursive;
+  /* font-family: "Leckerli One", cursive; */
   min-height: 96.3vh;
   font-weight: 200 !important;
 }
@@ -60,12 +61,37 @@ body {
 .logo > div {
   font-size: 18px;
 }
-.table1 {
-  /* flex-basis: 15%; */
-}
+
 .mapcontain {
   height: 50vh;
   width: 100%;
+}
+.change_data_chart {
+  display: flex;
+  justify-content: space-between;
+}
+.change_data_chart span {
+  cursor: pointer;
+  margin: 2% 5px;
+  /* font-weight: 800; */
+}
+.ct{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+.ct0{
+  width: 65%;
+  border-left: 1px solid #e2dddd;
+  border-right: 1px solid #e0dcdc;
+  height: auto;
+}
+.ct1{
+  width: 417px;
+}
+.contentCv{
+  padding-left: 2%;
+  margin: 5% 0;
 }
 @media screen and (max-width: 1197px) {
   .main {
@@ -74,6 +100,9 @@ body {
     justify-content: flex-start;
   }
   .container {
+    width: 100%;
+  }
+  .ct0{
     width: 100%;
   }
   /* summary*/
@@ -85,45 +114,128 @@ body {
   .flitem_2sum div {
     font-size: 18px !important;
   }
+  .table1 {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
 }
-.change_data_chart{
-  display: flex;
-  justify-content: space-between;
-}
-.change_data_chart span {
-  cursor: pointer;
-  margin: 2% 1%;
+@media screen and (max-width: 861px) {
+  .table1 {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+  /* .chartH{
+    width: 100vw;
+  } */
 }
 @media screen and (max-width: 638px) {
+  .title {
+    padding: 10px 60px;
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: center;
+  }
+  .table {
+    width: 100%;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    height: 420px !important;
+  }
+
+  .table tr {
+    display: flex;
+    justify-content: space-between;
+    width: 93vw !important;
+  }
+  .tbIf {
+    margin-top: 50px;
+  }
+  /**/
+
+  .flitem_2sum {
+    position: relative;
+    margin: 10px 0px !important;
+    height: 100px;
+    width: 100px !important;
+    border-bottom: 2px solid blue !important;
+    border-radius: 0% !important;
+    box-shadow: none !important;
+  }
+  .flbox_2sum {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .flitem_2sum {
+    height: 100px;
+    width: 100px !important;
+  }
+  .flitem_2sum div {
+    font-weight: 600;
+    font-size: 16px !important;
+  }
+}
+@media screen and (max-width: 450px) {
   .flbox_2sum {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-.flitem_2sum {
+  }
+  .flitem_2sum {
+    position: relative;
+    margin: 10px 5px !important;
     height: 100px;
-    width: 100px !important;
-}
-.flitem_2sum div {
-  font-weight: 600;
-  font-size: 16px !important;
-}
-.title {
-  padding: 10px 60px;
-  display: flex;
-  font-size: 0.8rem;
-  justify-content: center;
-}
-.table {
-  width: 100%;
-  margin-top: -20px;
-  margin-bottom: 40px ;
-  height: 420px !important;
-}
+    width: 200px;
+    border: 2px solid transparent;
+  }
 
-.table tr {
-  display: flex;
-  justify-content: space-between;
-  width: 95vw !important;
-}
+  .chartjs {
+    width: 100vw !important;
+    padding: 1px;
+  }
+  /* pagetable*/
+  .divPageNum1 {
+    width: 50% !important;
+    justify-content: flex-start !important;
+  }
+  .divPageNum2 {
+    width: 50% !important;
+  }
+  .pageNum {
+    margin: 0% 0% !important;
+    padding: 0.5% 0.8% !important;
+    font-size: 13px ;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+  .allPage {
+    margin: 0.3% 0.5% !important;
+    padding: 0 !important;
+    font-size: 16px;
+    cursor: pointer;
+    /* border-radius: 50%; */
+  }
+  .divPageNum span {
+    margin: 0.3% 0.5% !important;
+    padding: 0.5% 1% !important;
+    color: black;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  .pageCrr {
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    border: 2px solid transparent !important;
+    border-radius: 0 !important;
+    font-weight: 800 !important;
+  }
+  .divPageNum * {
+    font-size: 13px !important;
+  }
 }

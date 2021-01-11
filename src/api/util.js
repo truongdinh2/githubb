@@ -32,7 +32,6 @@ export const showDataOnMap = (data, casesType = "cases",dataLang) =>
       center={[country.countryInfo.lat, country.countryInfo.long]}
       color={casesTypeColors[casesType].hex}
       fillColor={casesTypeColors[casesType].hex}
-      // fillColor="red"
       pathOptions={redOptions}
       fillOpacity={0.4}
       weight={1}

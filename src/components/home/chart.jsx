@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import numeral from "numeral";
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Tooltip } from "antd";
 
 const options = {
@@ -35,11 +35,10 @@ const options = {
     ],
     yAxes: [
       {
-        gridLines: {
-          display: false,
-        },
+        // gridLines: {
+        //   display: false,
+        // },
         ticks: {
-          // Include a dollar sign in the ticks
           callback: function (value, index, values) {
             return numeral(value).format("0a");
           },
@@ -53,14 +52,22 @@ const buildChartData = (data, casesType) => {
   let chartData = [];
   let lastDataPoint;
   for (let date in data[casesType]) {
-    if (lastDataPoint) {
+    if (casesType !== "recovered") {
+      if (lastDataPoint) {
+        let newDataPoint = {
+          x: date,
+          y: data[casesType][date] - lastDataPoint,
+        };
+        chartData.push(newDataPoint);
+      }
+      lastDataPoint = data[casesType][date];
+    } else {
       let newDataPoint = {
         x: date,
-        y: data[casesType][date] - lastDataPoint,
+        y: data[casesType][date]
       };
       chartData.push(newDataPoint);
     }
-    lastDataPoint = data[casesType][date];
   }
   return chartData;
 };
@@ -71,13 +78,28 @@ function Chart() {
   const cases = 'cases';
   const deaths = 'deaths';
   const recovered = 'recovered';
-  const dataset = [
-    {
+  const dataset = {
+    cases: [
+      {
+        backgroundColor: "#d6b3b3",
+        borderColor: "#e93d3d",
+        data: data,
+      }
+    ]
+    , deaths: [{
       backgroundColor: "rgba(204, 16, 52, 0.5)",
       borderColor: "#CC1034",
       data: data,
-    },
-  ]
+    }],
+    recovered: [{
+      backgroundColor: "#9dd582",
+      borderColor: "#098b28",
+      data: data,
+    }]
+  }
+  const [fWeight, setFWeight] = useState(800);
+  const [fWeight1, setFWeight1] = useState(600);
+  const [fWeight2, setFWeight2] = useState(600);
   const L = useSelector(state => state.LanguageType);
   useEffect(() => {
     const fetchData = async () => {
@@ -87,31 +109,28 @@ function Chart() {
         })
         .then((data) => {
           let chartData = buildChartData(data, casesType);
-          // console.log(chartData);
           setData(chartData);
-          // buildChart(chartData);
         });
     };
 
     fetchData();
   }, [casesType]);
-  console.log(data, casesType);
   return (
     <div>
       <div className="change_data_chart">
-        <span onClick={() => setCasesType(cases)}>cases</span>
-        <span onClick={() => setCasesType(deaths)}>deaths</span>
-        <span onClick={() => setCasesType(recovered)}>
-          <Tooltip title={L.data.bugdata}>
-            recovered
+        <span style={{ fontWeight: fWeight }} onClick={() => { setCasesType(cases); setFWeight(800); setFWeight1(600); setFWeight2(600); }}>{L.data.sum}</span>
+        <span style={{ fontWeight: fWeight1 }} onClick={() => { setCasesType(deaths); setFWeight1(800); setFWeight(600); setFWeight2(600); }}>{L.data.deaths}</span>
+        <span style={{ fontWeight: fWeight2 }} onClick={() => { setCasesType(recovered); setFWeight2(800); setFWeight(600); setFWeight1(600); }}>
+          <Tooltip title={L.data.bugdata} >
+            {L.data.recovered}
           </Tooltip>
         </span>
       </div>
-      <div>
+      <div className="chartjs">
         {data?.length > 0 && (
           <Line
             data={{
-              datasets: dataset
+              datasets: dataset[casesType]
             }}
             options={options}
           />

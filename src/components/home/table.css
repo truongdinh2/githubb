@@ -11,3 +11,6 @@
 .detailTable th{
     text-align: center !important;
 }
+.chartjs {
+    width: 400px;
+}
