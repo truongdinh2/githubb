@@ -13,14 +13,13 @@ export default function Detail(props) {
         const api = "https://alerthumg.tech/covid";
         const results = fetch(api)
             .then(res => res.json())
-            .then(data => { setLoading(true); setData(data); alert('hj   ') })
+            .then(data => { setLoading(true); setData(data);  })
             .catch(err => console.log(`Warning!!! Error fetching data!!! 
         Error ${err}`));
         return results;
     }
     const listPatent = data.dataTableCase;
     const dataRender = (params) => {
-        console.log(params);
         if (params !== undefined) {
             setRowCovy(params)
         }

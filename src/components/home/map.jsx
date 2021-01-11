@@ -17,7 +17,6 @@ export default function GooM({mapCountries,casesType}) {
                 map.locate()
             },
             locationfound(e) {
-                console.log(e)
                 setPosition(e.latlng)
                 map.flyTo(e.latlng, map.getZoom(10))
             },

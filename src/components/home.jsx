@@ -65,7 +65,8 @@ export default function Home() {
             </div>
             <div className="ct">
             <div className="ct0"><Content/></div>
-            <div className="ct1"></div>
+            <div className="ct1">
+            </div>
             </div>
             <div className="footer">
                 copyright @ dinh truong

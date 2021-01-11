@@ -88,10 +88,31 @@ body {
 }
 .ct1{
   width: 417px;
+  border: 1px solid transparent;
+
+}
+.contentC img{
+  width: 80%;
+  height: auto;
+  margin-left: 50px;
+  /* border: 1px solid black; */
+
 }
 .contentCv{
+  /* border: 1px solid black; */
+  width: 60%;
   padding-left: 2%;
-  margin: 5% 0;
+}
+li{
+  font-weight: 600;
+  font-size: 16px;
+}
+.contentC{
+  /* border: 1px solid red; */
+  margin: 5% auto 10%;
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
 }
 @media screen and (max-width: 1197px) {
   .main {
@@ -179,6 +200,29 @@ body {
     font-weight: 600;
     font-size: 16px !important;
   }
+  .contentC{
+    margin: 5% auto 10%;
+    display: flex;
+    width: 80%;
+    flex-flow: wrap column-reverse;
+    justify-content: space-around;
+  }
+  .contentCv{
+    margin-top: 10%;
+    width: 100%;
+    padding-left: 2%;
+  }
+/*pageTable*/
+
+.divPageNum {
+    justify-content: space-around ;
+}
+.divPageNum1{
+    width: 60% !important;
+}
+.divPageNum2{
+    width: 40% !important;
+}
 }
 @media screen and (max-width: 450px) {
   .flbox_2sum {

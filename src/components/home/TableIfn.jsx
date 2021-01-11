@@ -3,7 +3,6 @@ import React from 'react';
 import './tableIfo.css'
 
 export default function TableIfn({ tableData }) {
-    // console.log(countries)
     return (
         <div>
             <div className="table">
